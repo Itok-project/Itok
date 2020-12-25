@@ -8,7 +8,12 @@
     background-size: cover;
 }
 .profile{
-    background-image: url("../../assets/images/bg.jpg");
+    background-image: url("../../assets/images/avatar2.png");
     width: 200px;
     height: 200px;
+    margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
