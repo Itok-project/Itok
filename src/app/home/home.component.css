@@ -1,0 +1,13 @@
+    .bg {
+        background-image: url("../../assets/images/bg.jpg");
+        position: fixed; 
+        min-width: 100%;
+        min-height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .setbg{
+        width: 60%;
+        height: 30%;
+    }
