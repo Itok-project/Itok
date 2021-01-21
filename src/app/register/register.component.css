@@ -1,9 +1,14 @@
 .bg {
     background-image: url("../../assets/images/bg.jpg");
-    position: fixed; 
+    position: fixed;
     min-width: 100%;
     min-height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.card {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
 }
