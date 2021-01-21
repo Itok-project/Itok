@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  recaptcha: any[] = [];
+  resolved(captchaResponse: any[]){
+    console.log(this.recaptcha);
+  }
+
+
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
