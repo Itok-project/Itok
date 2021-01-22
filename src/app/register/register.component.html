@@ -6,6 +6,7 @@
   <script src='https://www.google.com/recaptcha/api.js'></script>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body class="bg">
@@ -13,63 +14,70 @@
     <div class="container">
         <h1 class="text-center mt-5">Register</h1>
         <p-card >
+          <div>
+            <div class="text-center">
+              <img src=""  width="300px" class="rounded mb-2 img-thumbnil" alt="">
+            </div>
+          </div>
+          <div class="mb-3 row">
+            <div class="col-sm-2 col-form-label"></div>
+            <div class="col-sm-10 text-center">
+              <input type="file" #fileimage name="" id="" (change)="getFile(fileimage)">
+            </div>
+          </div>
             <div class="mb-3 row">
                 <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" id="staticEmail">
+                  <input type="text" class="form-control" id="email" name="email" [(ngModel)]="email">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                 <div class="col-sm-10">
-                  <input type="password" pPassword class="form-control" id="inputPassword">
+                  <input type="password" class="form-control" id="pass" name="pass" [(ngModel)]="pass">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Name</label>
                 <div class="col-sm-10">
-                  <input type="text"  class="form-control" id="inputPassword" >
+                  <input type="text"  class="form-control" id="name" name="name" [(ngModel)]="name">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Surname</label>
                 <div class="col-sm-10">
-                  <input type="text"  class="form-control" id="inputPassword" >
+                  <input type="text"  class="form-control" id="lname" name="lname" [(ngModel)]="lname">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Tel</label>
                 <div class="col-sm-10">
-                  <input type="text"  class="form-control" id="inputPassword" >
+                  <input type="text"  class="form-control" id="tel" name="tel" [(ngModel)]="tel">
                 </div>
               </div>
               <div class="mb-3 row">
                 <label for="inputPassword" class="col-sm-2 col-form-label">Gender</label>
                 <div class="col-sm-10">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="Male" id="gender" [(ngModel)]="gender" checked>
                         <label class="form-check-label" for="flexRadioDefault1">
                           Male
                         </label>
                       </div>
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                        <label class="form-check-label" for="flexRadioDefault2">
-                          Female
-                        </label>
-                      </div>
-                </div>
-                <!-- <div class="justify-content-center">
 
-                </div> -->
-                <div style="margin:auto">
-                  <div id="comment_form" action="action.php" method="post" class="g-recaptcha"  data-sitekey="6LdT9jUaAAAAAI4CqT3oPIirNfXwySxATg242tEd"></div>
-                 <br> <button pButton pRipple type="button" style="margin-left: 100px;" label="Submit" class="p-button-raised p-button-text"></button>
                 </div>
+                
+
+                <div style="margin:auto">
+                  <ngx-recaptcha2 #captchaElem
+                    [siteKey]="siteKey"
+                    (success) = "Success()">
+                  </ngx-recaptcha2>
+                    <a (click)="register()"><button pButton type="button" style="margin-left: 100px;"  label="Submit" class="ui-button-success"></button></a> 
+                  </div>
               </div>
+              
         </p-card>
     </div>
 </body>
 </html>
-
-
